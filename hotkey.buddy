@@ -1,0 +1,60 @@
+£:Main
+pushString "Hello World"
+call PrintLine
+ret
+e:Control_C
+pushString "Clipboard"
+call PrintLine
+ret
+e:Control_W
+pushString "Control+W"
+call PrintLine
+pushString "5000"
+call Delay
+pushString "Screenshot"
+call PrintLine
+pushString ""
+call CaptureScreen
+ret
+e:Control_Q
+call Control_C
+call GetClipboard
+setVar cb
+pushVar cb
+pushString "2"
+add
+setVar cb2
+pushVar cb2
+call SetClipboard
+pushVar cb2
+call Write
+:Print
+print
+ret
+:PrintLine
+printLine
+ret
+:Read
+read
+ret
+:ReadLine
+readLine
+ret
+:InputString
+inputString
+ret
+:CaptureScreen
+captureScreen
+ret
+:Delay
+delay
+ret
+:GetClipboard
+getClipboard
+ret
+:SetClipboard
+setClipboard
+ret
+:Write
+write
+ret
