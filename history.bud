@@ -1,29 +1,19 @@
 import system
 
-# Eventually this will be an array
-global clip1 = ""
-global clip2 = ""
-global clip3 = ""
-global clip4 = ""
-global clip5 = ""
-
-function Main() 
-{ 
-	PrintLine("Clipboard History")
-}
+global clips = [ "", "", "", "", "" ]
 
 event Control_C() 
 { 
 	# ? Add sys function to shift array items
-	clip5 = clip3
-	clip4 = clip3
-	clip3 = clip2
-	clip2 = clip1
-	clip1 = GetClipboard()
+	clips[4] = clips[3]
+	clips[3] = clips[2]
+	clips[2] = clips[1]
+	clips[1] = clips[0]
+	clips[0] = GetClipboard()
 }
 
-event Control_Shift_F1() { Write(clip1) }
-event Control_Shift_F2() { Write(clip2) }
-event Control_Shift_F3() { Write(clip3) }
-event Control_Shift_F4() { Write(clip4) }
-event Control_Shift_F5() { Write(clip5) }
+event Control_Shift_F1() { Write(clips[0]) }
+event Control_Shift_F2() { Write(clips[1]) }
+event Control_Shift_F3() { Write(clips[2]) }
+event Control_Shift_F4() { Write(clips[3]) }
+event Control_Shift_F5() { Write(clips[4]) }

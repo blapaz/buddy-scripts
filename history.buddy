@@ -1,47 +1,57 @@
-ïpushString ""
-setGlobalVar clip1
+ºpushString "copied"
+setGlobalVar copied
 pushString ""
-setGlobalVar clip2
+setGlobalVar clips.0
 pushString ""
-setGlobalVar clip3
+setGlobalVar clips.1
 pushString ""
-setGlobalVar clip4
+setGlobalVar clips.2
 pushString ""
-setGlobalVar clip5
-:Main
-pushString "Clipboard History"
+setGlobalVar clips.3
+pushString ""
+setGlobalVar clips.4
+e:Control_C
+pushVar clips.3
+setVar clips.4
+pushVar clips.2
+setVar clips.3
+pushVar clips.1
+setVar clips.2
+pushVar clips.0
+setVar clips.1
+call GetClipboard
+setVar clips.0
+pushString "a"
+setVar clips.0
+pushString "b"
+setVar clips.1
+pushString "c"
+setVar clips.2
+pushString "d"
+setVar clips.3
+pushString "e"
+setVar clips.4
+pushVar clips.2
 call PrintLine
 ret
-e:Control_C
-pushVar clip3
-setVar clip5
-pushVar clip3
-setVar clip4
-pushVar clip2
-setVar clip3
-pushVar clip1
-setVar clip2
-call GetClipboard
-setVar clip1
-ret
 e:Control_Shift_F1
-pushVar clip1
+pushVar clips.0
 call Write
 ret
 e:Control_Shift_F2
-pushVar clip2
+pushVar clips.1
 call Write
 ret
 e:Control_Shift_F3
-pushVar clip3
+pushVar clips.2
 call Write
 ret
 e:Control_Shift_F4
-pushVar clip4
+pushVar clips.3
 call Write
 ret
 e:Control_Shift_F5
-pushVar clip5
+pushVar clips.4
 call Write
 :Print
 print
