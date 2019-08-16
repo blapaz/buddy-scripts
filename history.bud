@@ -1,0 +1,29 @@
+import system
+
+# Eventually this will be an array
+global clip1 = ""
+global clip2 = ""
+global clip3 = ""
+global clip4 = ""
+global clip5 = ""
+
+function Main() 
+{ 
+	PrintLine("Clipboard History")
+}
+
+event Control_C() 
+{ 
+	# ? Add sys function to shift array items
+	clip5 = clip3
+	clip4 = clip3
+	clip3 = clip2
+	clip2 = clip1
+	clip1 = GetClipboard()
+}
+
+event Control_Shift_F1() { Write(clip1) }
+event Control_Shift_F2() { Write(clip2) }
+event Control_Shift_F3() { Write(clip3) }
+event Control_Shift_F4() { Write(clip4) }
+event Control_Shift_F5() { Write(clip5) }

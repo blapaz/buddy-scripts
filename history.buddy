@@ -1,0 +1,75 @@
+ïpushString ""
+setGlobalVar clip1
+pushString ""
+setGlobalVar clip2
+pushString ""
+setGlobalVar clip3
+pushString ""
+setGlobalVar clip4
+pushString ""
+setGlobalVar clip5
+:Main
+pushString "Clipboard History"
+call PrintLine
+ret
+e:Control_C
+pushVar clip3
+setVar clip5
+pushVar clip3
+setVar clip4
+pushVar clip2
+setVar clip3
+pushVar clip1
+setVar clip2
+call GetClipboard
+setVar clip1
+ret
+e:Control_Shift_F1
+pushVar clip1
+call Write
+ret
+e:Control_Shift_F2
+pushVar clip2
+call Write
+ret
+e:Control_Shift_F3
+pushVar clip3
+call Write
+ret
+e:Control_Shift_F4
+pushVar clip4
+call Write
+ret
+e:Control_Shift_F5
+pushVar clip5
+call Write
+:Print
+print
+ret
+:PrintLine
+printLine
+ret
+:Read
+read
+ret
+:ReadLine
+readLine
+ret
+:InputString
+inputString
+ret
+:CaptureScreen
+captureScreen
+ret
+:Delay
+delay
+ret
+:GetClipboard
+getClipboard
+ret
+:SetClipboard
+setClipboard
+ret
+:Write
+write
+ret

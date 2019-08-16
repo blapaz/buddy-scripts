@@ -1,15 +1,19 @@
-£:Main
+ÕpushString "Clipboard"
+setGlobalVar clip
+pushInt 2
+setGlobalVar num
+:Main
 pushString "Hello World"
 call PrintLine
 ret
 e:Control_C
-pushString "Clipboard"
+pushVar clip
 call PrintLine
 ret
 e:Control_W
 pushString "Control+W"
 call PrintLine
-pushString "5000"
+pushInt 5000
 call Delay
 pushString "Screenshot"
 call PrintLine
@@ -21,7 +25,7 @@ call Control_C
 call GetClipboard
 setVar cb
 pushVar cb
-pushString "2"
+pushVar num
 add
 setVar cb2
 pushVar cb2
