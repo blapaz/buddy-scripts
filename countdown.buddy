@@ -1,0 +1,93 @@
+ÛpushInt 60
+setGlobalVar countdown
+pushInt 0
+setGlobalVar isTimerOn
+:Main
+pushString "Timer will start on CTRL + SHIFT + F1"
+call Message
+ret
+e:Control_Shift_F1
+pushString "Timer will start on closing this message"
+call Message
+pushInt 60
+setVar i
+pushInt 1
+setVar isTimerOn
+.repeat0
+pushVar i
+pushInt 0
+ifgte
+pushVar i
+call PrintLine
+pushInt 1000
+call Delay
+pushVar i
+pushInt 1
+sub
+setVar i
+goto .repeat0
+endif
+pushString "Timer has expired!"
+call Message
+ret
+e:Control_Shift_F2
+pushVar isTimerOn
+pushInt 1
+ife
+pushString "Timer stopped with "
+pushVar countdown
+pushString " seconds left"
+add
+add
+call Message
+pushInt 0
+setVar isTimerOn
+endif
+ret
+e:Control_Shift_1
+pushVar countdown
+pushInt 1
+add
+setVar countdown
+pushString "Timer is set for "
+pushVar countdown
+pushString " seconds now"
+add
+add
+call Message
+:Print
+print
+ret
+:PrintLine
+printLine
+ret
+:Read
+read
+ret
+:ReadLine
+readLine
+ret
+:InputString
+inputString
+ret
+:CaptureScreen
+captureScreen
+ret
+:Delay
+delay
+ret
+:GetClipboard
+getClipboard
+ret
+:SetClipboard
+setClipboard
+ret
+:Write
+write
+ret
+:Message
+msg
+ret
+:Exit
+exit
+ret

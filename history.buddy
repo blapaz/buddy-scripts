@@ -1,6 +1,4 @@
-ºpushString "copied"
-setGlobalVar copied
-pushString ""
+àpushString ""
 setGlobalVar clips.0
 pushString ""
 setGlobalVar clips.1
@@ -11,47 +9,47 @@ setGlobalVar clips.3
 pushString ""
 setGlobalVar clips.4
 e:Control_C
-pushVar clips.3
-setVar clips.4
-pushVar clips.2
-setVar clips.3
-pushVar clips.1
-setVar clips.2
-pushVar clips.0
-setVar clips.1
+pushInt 4
+setVar i
+.repeat0
+pushVar i
+pushInt 0
+ifgt
+pushVar i
+pushInt 1
+sub
+setVar x
+setVar clips.Blapaz.Buddy.Compiler.Ident
+pushVar x
+setVar i
+goto .repeat0
+endif
+setVar clips.Blapaz.Buddy.Compiler.IntLiteral
 call GetClipboard
-setVar clips.0
-pushString "a"
-setVar clips.0
-pushString "b"
-setVar clips.1
-pushString "c"
-setVar clips.2
-pushString "d"
-setVar clips.3
-pushString "e"
-setVar clips.4
-pushVar clips.2
-call PrintLine
 ret
 e:Control_Shift_F1
-pushVar clips.0
+pushInt 0
+pushVar clips
 call Write
 ret
 e:Control_Shift_F2
-pushVar clips.1
+pushInt 1
+pushVar clips
 call Write
 ret
 e:Control_Shift_F3
-pushVar clips.2
+pushInt 2
+pushVar clips
 call Write
 ret
 e:Control_Shift_F4
-pushVar clips.3
+pushInt 3
+pushVar clips
 call Write
 ret
 e:Control_Shift_F5
-pushVar clips.4
+pushInt 4
+pushVar clips
 call Write
 :Print
 print
@@ -82,4 +80,7 @@ setClipboard
 ret
 :Write
 write
+ret
+:Exit
+exit
 ret

@@ -28,3 +28,9 @@ ret
 :Write
 write
 ret
+:Message
+msg
+ret
+:Exit
+exit
+ret

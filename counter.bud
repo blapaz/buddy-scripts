@@ -1,0 +1,27 @@
+import system
+
+function Main() 
+{
+	i = 0
+	
+	repeat
+	{
+		PrintLine(i)
+	
+		if (i <= 5) 
+		{ 
+			PrintLine("<= 5") 
+		}
+		elseif (i <= 10) 
+		{ 
+			PrintLine("<= 10") 
+		}
+		elseif (i >= 15) 
+		{ 
+			Exit() 
+		}
+			
+		i = i + 1	
+		Delay(i * 100)
+	}
+}

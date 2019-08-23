@@ -4,16 +4,11 @@ global clips = [ "", "", "", "", "" ]
 
 event Control_C() 
 { 
-	# ? Add function to determine array length
-	i = 4
-	
-	while (i > 0)
-	{
-		x = i - 1
-		clips[i] = clips[x]
-		i = x
-	}
-	
+	# ? Add sys function to shift array items
+	clips[4] = clips[3]
+	clips[3] = clips[2]
+	clips[2] = clips[1]
+	clips[1] = clips[0]
 	clips[0] = GetClipboard()
 }
 

@@ -1,0 +1,66 @@
+ç:Main
+pushInt 0
+setVar i
+.repeat0
+pushVar i
+call PrintLine
+pushVar i
+pushInt 5
+iflte
+pushString "<= 5"
+call PrintLine
+endif
+pushVar i
+pushInt 10
+elseiflte
+pushString "<= 10"
+call PrintLine
+endif
+pushVar i
+pushInt 15
+elseifgte
+call Exit
+endif
+pushVar i
+pushInt 1
+add
+setVar i
+pushVar i
+pushInt 100
+mul
+call Delay
+goto .repeat0
+ret
+:Print
+print
+ret
+:PrintLine
+printLine
+ret
+:Read
+read
+ret
+:ReadLine
+readLine
+ret
+:InputString
+inputString
+ret
+:CaptureScreen
+captureScreen
+ret
+:Delay
+delay
+ret
+:GetClipboard
+getClipboard
+ret
+:SetClipboard
+setClipboard
+ret
+:Write
+write
+ret
+:Exit
+exit
+ret
