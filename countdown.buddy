@@ -1,18 +1,12 @@
-€pushInt 60
-setGlobalVar countdown
-pushInt 0
-setGlobalVar isTimerOn
-:Main
+ê:Main
 pushString "Timer will start on CTRL + SHIFT + F1"
 call Message
 ret
 e:Control_Shift_F1
-pushString "Timer will start on closing this message"
+pushString "Click okay to start the timer"
 call Message
-pushInt 60
+pushInt 30
 setVar i
-pushInt 1
-setVar isTimerOn
 .repeat0
 pushVar i
 pushInt 0
@@ -28,32 +22,6 @@ setVar i
 goto .repeat0
 endif
 pushString "Timer has expired!"
-call Message
-ret
-e:Control_Shift_F2
-pushVar isTimerOn
-pushInt 1
-ife
-pushString "Timer stopped with "
-pushVar countdown
-pushString " seconds left"
-add
-add
-call Message
-pushInt 0
-setVar isTimerOn
-endif
-ret
-e:Control_Shift_1
-pushVar countdown
-pushInt 1
-add
-setVar countdown
-pushString "Timer is set for "
-pushVar countdown
-pushString " seconds now"
-add
-add
 call Message
 :Print
 print

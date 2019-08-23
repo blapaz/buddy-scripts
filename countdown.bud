@@ -9,7 +9,7 @@ event Control_Shift_F1()
 {
 	Message("Click okay to start the timer")
 	
-	i = 60
+	i = 30
 	
 	while (i >= 0) 
 	{
